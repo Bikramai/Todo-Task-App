@@ -1,0 +1,276 @@
+/* Base body styles */
+body {
+    margin-top: 20px;
+    position: relative; /* Ensure that the body can be the parent of the pseudo-element */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+    -webkit-transition: background-color 0.3s, color 0.3s; /* Safari prefix */
+}
+
+/* Light mode styles */
+body.light-mode {
+    background: #edf1f5; /* Light background color */
+    color: #000; /* Light text color */
+}
+
+body.light-mode::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/background1.png');
+    background-repeat: repeat;
+    background-size: auto 350px;
+    opacity: 0.2; /* Adjust the opacity to simulate transparency */
+    z-index: -1; /* Keep the image behind the content */
+    pointer-events: none; /* Ensure the image doesn't interfere with interactions */
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background: #1c1c1c; /* Dark background color */
+    color: #fff; /* Dark text color */
+}
+
+body.dark-mode::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/background1-d.png'); /* Ensure the path is correct */
+    background-repeat: repeat;
+    background-size: auto 350px;
+    opacity: 0.3; /* Adjust opacity if needed */
+    z-index: -1; /* Keep the image behind the content */
+    pointer-events: none; /* Ensure the image doesn't interfere with interactions */
+}
+
+/* Card Styles */
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff; /* Default card background */
+    background-clip: border-box;
+    border: 0 solid transparent;
+    border-radius: 0;
+    margin-bottom: 30px;
+    transition: background-color 0.3s, border-color 0.3s;
+    -webkit-transition: background-color 0.3s, border-color 0.3s; /* Safari prefix */
+}
+
+body.light-mode .card {
+    background-color: #fff; /* Light mode card background */
+}
+
+body.dark-mode .card {
+    background-color: #333; /* Dark mode card background */
+}
+
+/* Card Body */
+.card-body {
+    flex: 1 1 auto;
+    padding: 1.57rem;
+    transition: color 0.3s;
+    -webkit-transition: color 0.3s; /* Safari prefix */
+}
+
+body.light-mode .card-body {
+    color: #000; /* Light mode card body text color */
+}
+
+body.dark-mode .card-body {
+    color: #fff; /* Dark mode card body text color */
+}
+
+/* Note Grid Styles */
+.note-has-grid .nav-link {
+    padding: .5rem;
+}
+
+.note-has-grid .single-note-item .card {
+    border-radius: 10px;
+}
+
+.note-has-grid .single-note-item .favourite-note {
+    cursor: pointer;
+}
+
+.note-has-grid .single-note-item .side-stick {
+    position: absolute;
+    width: 3px;
+    height: 35px;
+    left: 0;
+}
+
+.note-has-grid .single-note-item .category-dropdown.dropdown-toggle:after {
+    display: none;
+}
+
+.note-has-grid .single-note-item .category [class*=category-] {
+    height: 15px;
+    width: 15px;
+    display: none;
+}
+
+.note-has-grid .single-note-item .category [class*=category-]::after {
+    content: "\f0d7";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 12px;
+    color: #fff;
+    position: absolute;
+}
+
+.note-has-grid .single-note-item .category .category-business {
+    background-color: rgba(44, 208, 126, .5);
+    border: 2px solid #2cd07e;
+}
+
+.note-has-grid .single-note-item .category .category-social {
+    background-color: rgba(44, 171, 227, .5);
+    border: 2px solid #2cabe3;
+}
+
+.note-has-grid .single-note-item .category .category-important {
+    background-color: rgba(255, 80, 80, .5);
+    border: 2px solid #ff5050;
+}
+
+/* Note Item Colors */
+.note-has-grid .single-note-item.all-category .point {
+    color: rgba(82, 95, 127, .5);
+}
+
+.note-has-grid .single-note-item.note-business .point {
+    color: rgba(44, 208, 126, .5);
+}
+
+.note-has-grid .single-note-item.note-business .side-stick {
+    background-color: rgba(44, 208, 126, .5);
+}
+
+.note-has-grid .single-note-item.note-business .category .category-business {
+    display: inline-block;
+}
+
+.note-has-grid .single-note-item.note-favourite .favourite-note {
+    color: #ffc107;
+}
+
+.note-has-grid .single-note-item.note-social .point {
+    color: rgba(44, 171, 227, .5);
+}
+
+.note-has-grid .single-note-item.note-social .side-stick {
+    background-color: rgba(44, 171, 227, .5);
+}
+
+.note-has-grid .single-note-item.note-social .category .category-social {
+    display: inline-block;
+}
+
+.note-has-grid .single-note-item.note-important .point {
+    color: rgba(255, 80, 80, .5);
+}
+
+.note-has-grid .single-note-item.note-important .side-stick {
+    background-color: rgba(255, 80, 80, .5);
+}
+
+.note-has-grid .single-note-item.note-important .category .category-important {
+    display: inline-block;
+}
+
+/* More Options */
+.note-has-grid .single-note-item.all-category .more-options,
+.note-has-grid .single-note-item.all-category.note-favourite .more-options {
+    display: block;
+}
+
+.note-has-grid .single-note-item.all-category.note-business .more-options,
+.note-has-grid .single-note-item.all-category.note-favourite.note-business .more-options,
+.note-has-grid .single-note-item.all-category.note-favourite.note-important .more-options,
+.note-has-grid .single-note-item.all-category.note-favourite.note-social .more-options,
+.note-has-grid .single-note-item.all-category.note-important .more-options,
+.note-has-grid .single-note-item.all-category.note-social .more-options {
+    display: none;
+}
+
+/* Toggle Switch Styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Media Queries */
+@media (max-width: 767.98px) {
+    .note-has-grid .single-note-item {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .note-has-grid .single-note-item {
+        max-width: 216px;
+    }
+}
