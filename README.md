@@ -7,14 +7,14 @@
 
 The project is a To-Do application that integrates a Django backend with a React frontend. The primary goal is to build a dynamic and interactive web application where users can create, manage, and track their to-do tasks. The backend handles data management,  and business logic, while the frontend provides a user-friendly interface for interacting with the application.
 
-## Technology did use for that?
+## Technologies
 
 The project utilizes the following technologies:
 - **Backend**: Django, a high-level Python web framework that simplifies the development of secure and maintainable websites.
 - **Frontend**: React, a JavaScript library for building user interfaces, which allows for creating a dynamic and responsive user experience.
 - **Additional Tools**: Bootstrap and Reactstrap for UI components and styling, and Axios for making HTTP requests between the frontend and backend.
 
-## Q3: What did you learn after implementing this?
+## You will Learn after implementing this Project:
 
 Through implementing this project, I gained valuable insights into:
 - **Integration of Frontend and Backend**: How to effectively connect a React frontend with a Django backend, including setting up RESTful APIs and handling data flow between the two.
@@ -22,7 +22,7 @@ Through implementing this project, I gained valuable insights into:
 - **UI/UX Design**: Enhancing user experience by using libraries like Bootstrap and Reactstrap to build responsive and visually appealing interfaces.
 - **Full-Stack Development**: Understanding the full lifecycle of a web application from server-side logic to client-side rendering and user interaction.
 
-## Q4: What are the business benefits?
+## Business benefits:
 
 The business benefits of this project include:
 - **Increased Productivity**: Users can efficiently manage their tasks, leading to better organization and time management.
@@ -30,7 +30,7 @@ The business benefits of this project include:
 - **Enhanced User Experience**: A dynamic and responsive interface improves user engagement and satisfaction, potentially leading to higher user retention.
 - **Cost Efficiency**: By leveraging open-source technologies like Django and React, the project minimizes development costs while maximizing functionality.
 
-## Q5: What are the challenges you faced on this project?
+## Challenges I faced on this project:
 
 The challenges faced during the project include:
 - **Integration Issues**: Ensuring seamless communication between the Django backend and the React frontend, particularly with API endpoints and data synchronization.
